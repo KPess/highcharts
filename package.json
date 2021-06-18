@@ -6,9 +6,14 @@
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
+    "highcharts": "^9.1.2",
+    "highcharts-more": "^0.1.7",
+    "pondjs": "^0.8.10",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-highcharts": "^16.1.0",
     "react-scripts": "4.0.3",
+    "react-timeseries-charts": "^0.16.1",
     "web-vitals": "^1.1.2"
   },
   "scripts": {

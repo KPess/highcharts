@@ -1,25 +1,48 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import tempData from './TempData.json'
+//HighChart Modules
+import ReactHighcharts from "react-highcharts";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+//HighCharts settings, type and data
+
+/* var dates = []
+
+for (var date in tempData) {
+  if date === []
+} */
+let dates = []
+dates = Array.from(new Set(tempData.map(({ date }) => date)))
+
+const config = {
+    xAxis: {
+      title: 'Date' 
+    },
+    chart: {
+      type: 'areasplinerange'
+    },
+    title: {
+      text: 'Daily Average Temperature'
+    },
+    series: [
+      {
+        name: 'Average Temp',
+        data: {dates}
+      }
+    ]
+  };
+
+console.log(tempData)
+console.log(dates)
+class App extends React.Component {
+  render() {
+    return (
+    <div>
+     <h1>Highcharts with Reactjs</h1>
+     <ReactHighcharts config={config}></ReactHighcharts>
     </div>
-  );
+   )
+ };
 }
-
 export default App;
